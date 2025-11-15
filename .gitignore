@@ -1,0 +1,32 @@
+# ========== FRONTEND ==========
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/yarn-error.log*
+frontend/npm-debug.log*
+frontend/pnpm-debug.log*
+
+# Ignore frontend env files
+frontend/.env*
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+
+# ========== BACKEND ==========
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/env/
+backend/venv/
+backend/.env
+backend/.env.*
+backend/polls.db
+backend/*.sqlite3
+backend/*.db
+
+# ========== GENERAL ==========
+.DS_Store
+*.pem

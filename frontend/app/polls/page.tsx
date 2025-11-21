@@ -12,7 +12,7 @@ export default function PollsPage() {
   //  Fetch polls from backend
   const fetchPolls = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/polls/");
+      const res = await fetch("https://quikpoll-production.up.railway.app/polls/");
       const data = await res.json();
 
       //  Convert backend fields into `options` array
@@ -38,7 +38,7 @@ export default function PollsPage() {
   }, []);
 
   const handleVote = async (pollId: number, optionIndex: number) => {
-    await fetch(`http://127.0.0.1:8000/polls/${pollId}/vote/`, {
+    await fetch(`https://quikpoll-production.up.railway.app/polls/${pollId}/vote/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ option_index: optionIndex }),
@@ -47,7 +47,7 @@ export default function PollsPage() {
   };
 
   const handleLike = async (pollId: number) => {
-    await fetch(`http://127.0.0.1:8000/polls/${pollId}/like/`, { method: "POST" });
+    await fetch(`https://quikpoll-production.up.railway.app/polls/${pollId}/like/`, { method: "POST" });
     fetchPolls();
   };
 
@@ -56,7 +56,7 @@ export default function PollsPage() {
     const confirmDelete = confirm("Are you sure you want to delete this poll?");
     if (!confirmDelete) return;
 
-    await fetch(`http://127.0.0.1:8000/polls/${pollId}/`, {
+    await fetch(`https://quikpoll-production.up.railway.app/polls/${pollId}`, {
       method: "DELETE",
     });
     fetchPolls(); // Refresh after delete

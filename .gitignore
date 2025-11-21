@@ -10,8 +10,8 @@ frontend/pnpm-debug.log*
 
 # Ignore frontend env files
 frontend/.env*
-frontend/.env.local
-frontend/.env.production
+frontend/.env.local   
+frontend/.env.production       
 frontend/.env.development
 
 # ========== BACKEND ==========
